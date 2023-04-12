@@ -1,10 +1,33 @@
-<nav>
-    <%= image_tag "logo.png", class: "logo_img" %>
-    <ul>
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag "logo.png", class: "logo" %>
+  <% end %>
+  <div class="group">
+    <ul class="navigation">
       <li><%= link_to "About", root_path %></li>
       <li><%= link_to "Gallery",root_path  %></li>
       <li><%= link_to "Admissions",root_path %></li>
       <li><%= link_to "Calendar",root_path  %></li>
       <li><%= link_to "Career", root_path %></li>
     </ul>
-</nav>
+    <div class="search">
+      <span class="icon">
+        <i class="fa-solid fa-magnifying-glass searchBtn"></i>
+        <i class="fa-solid fa-xmark closeBtn"></i>
+      </span>
+    </div>
+  </div>
+  <div class="searchBox">
+    <input type="text" placeholder="Search here . . .">
+  </div>
+</header>
+
+<script>
+  Let searchBtn = document.querySelector('.searchBtn');
+  Let closeBtn = document.querySelector('.closeBtn');
+  Let searchBox = document.querySelector('.searchBox');
+  searchBtn.onclick = function(){
+    searchBox.classList.add('active');
+  }
+
+</script>
